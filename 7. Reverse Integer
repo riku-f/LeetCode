@@ -1,0 +1,24 @@
+class Solution(object):
+    def reverse(self, x):
+        x_s = str(x)
+        moji=""
+        s,a=0,0
+        if x==0 :
+            moji="0"
+        if x_s[0]=="-":
+            moji+="-"
+            x_s=x_s[1:]
+        for i in range(len(x_s)):
+            if s==a and x_s[-1-i]=="0":
+                a+=1
+            else:
+                moji+=x_s[-1-i]
+            s+=1
+        if int(moji)>2**31 or int(moji)<-2**31:
+            moji=0
+        return int(moji)
+        """
+        :type x: int
+        :rtype: int
+        """
+        
