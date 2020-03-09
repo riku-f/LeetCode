@@ -1,0 +1,16 @@
+class Solution(object):
+    def strStr(self, haystack, needle):
+        len_n=len(needle)
+        len_h=len(haystack)
+        num=0
+        if needle not in haystack: return -1
+        elif haystack==needle: return 0
+        while num<=len_h-len_n:
+            if haystack[num:num+len_n]==needle: return num
+            else: num+=1
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        
