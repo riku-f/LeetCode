@@ -1,0 +1,32 @@
+class Solution(object):
+    def countAndSay(self, n):
+        rem=["211","221"]
+        if n<=3: return rem[n%2][-1-(n//2):]
+        s_2="21"
+        i=0
+        while i<(n-3):
+            s=s_2
+            s_2=""
+            ii=0
+            iii=0
+            l=len(s)
+            while ii+iii<l:
+                if ii+iii+1<l and s[ii]==s[ii+iii+1]:
+                    iii+=1
+                else :
+                    s_2+=str(len(s[ii:ii+iii+1]))+s[ii]
+                    ii+=iii+1
+                    iii=0
+            i+=1
+        return s_2
+                
+                
+            
+        """
+        :type n: int
+        :rtype: str
+        """
+
+
+        
+        
