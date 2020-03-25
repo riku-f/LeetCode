@@ -1,0 +1,9 @@
+class Solution(object):
+    def plusOne(self, digits):
+        str_d=str(int(''.join((str(n) for n in digits)))+1)
+        return [int(n) for n in str_d]
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        
